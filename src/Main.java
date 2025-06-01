@@ -1,15 +1,25 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
+        Library library = new Library();
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Book book1 = new Book();
+        Book book2 = new Book();
+        library.addBook("01", book1);
+        library.addBook("02", book2);
+
+        library.addMember("1");
+        library.addMember("2");
+        library.addMember("3");
+
+        library.borrowBook("1", "01");
+        library.borrowBook("1", "02");
+        library.borrowBook("2", "02");
+
+        library.getLastTransaction("1");
+        library.getLastTransaction("2");
+
+        library.returnBook("1", "01");
+
+        library.borrowBook("3", "01");
     }
 }
